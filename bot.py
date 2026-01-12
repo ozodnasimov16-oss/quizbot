@@ -341,13 +341,6 @@ def stop_quiz_callback(call):
         message_id=call.message.message_id,
         parse_mode='HTML'
     )
-    
-    @bot.message_handler(commands=['gquiz'])
-def start_gquiz(message):
-    if message.chat.type not in ("group", "supergroup"):
-        return bot.reply_to(message, "Bu buyruq faqat guruhlarda ishlaydi!")
-
-    bot.reply_to(message, "Group Quiz rejimi tayyor! 😊")
 
 # ==================== ASOSIY BUYRUQLAR ====================
 
