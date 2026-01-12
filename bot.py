@@ -7,6 +7,15 @@ import os
 from datetime import datetime, timedelta
 import threading
 from group_quiz import GroupQuizManager
+@bot.message_handler(commands=['gquiz'])
+def start_gquiz(message):
+    if message.chat.type not in ("group", "supergroup"):
+        return bot.reply_to(message, "Bu buyruq faqat guruhlarda ishlaydi!")
+
+    bot.reply_to(message, "Group Quiz rejimi tayyor! 😊")
+
+print("Bot ishga tushdi!")
+bot.infinity_polling()
 
 TOKEN = "8081419751:AAFdgStEJnCZ3mWq7x4fhn2DwAMxQthyCdo"
 bot = telebot.TeleBot(TOKEN)
